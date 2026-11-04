@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфолио — Разработка цифровых решений для бизнеса</title>
+  <meta name="description" content="Разработка сайтов, мобильных приложений, автоматизация бизнес-процессов и AI-решения. Портфолио реализованных IT-проектов и примеры продающих сайтов.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">A</span> PORTFOLIO</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="is-active">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="sites.html">Примеры сайтов</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Меню"><span></span></button>
+    </div>
+  </header>
+
+  <!-- 01 — ПЕРВЫЙ ЭКРАН -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy reveal in">
+        <h1>Разработка <span class="grad">цифровых решений</span> для бизнеса</h1>
+        <p class="lead">Сайты, мобильные приложения, автоматизация бизнес-процессов и AI-решения под конкретные задачи вашей компании.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="projects.html">Смотреть проекты</a>
+          <a class="btn btn-ghost" href="#contact">Связаться</a>
+        </div>
+      </div>
+
+      <!-- Строка статистики -->
+      <div class="stats reveal">
+        <div class="stat">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg></span>
+          <div><b>7+ лет</b><span>опыта</span></div>
+        </div>
+        <div class="stat">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 12 15 2 8.5 12 2"/><polyline points="2 15.5 12 22 22 15.5"/></svg></span>
+          <div><b>20+</b><span>проектов</span></div>
+        </div>
+        <div class="stat">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <div><b>Web / Mobile / AI</b><span>направления разработки</span></div>
+        </div>
+        <div class="stat">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/></svg></span>
+          <div><b>Казахстан / International</b><span>работа с клиентами локально и за рубежом</span></div>
+        </div>
+      </div>
+
+      <!-- Направления -->
+      <div class="directions">
+        <div class="dir-card reveal">
+          <div class="dir-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Разработка сайтов</h3>
+          <p>Современные, быстрые и удобные веб-сайты для бизнеса, продуктов и сервисов.</p>
+        </div>
+        <div class="dir-card reveal">
+          <div class="dir-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+          <h3>Мобильные приложения</h3>
+          <p>Кроссплатформенные приложения для iOS и Android: от идеи до запуска и развития.</p>
+        </div>
+        <div class="dir-card reveal">
+          <div class="dir-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <h3>Автоматизация бизнеса</h3>
+          <p>Цифровые системы и интеграции для оптимизации процессов, управления и роста эффективности.</p>
+        </div>
+        <div class="dir-card reveal">
+          <div class="dir-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg></div>
+          <h3>AI-решения</h3>
+          <p>Применение искусственного интеллекта в продуктах: анализ, автоматизация и умные сервисы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — ИЗБРАННЫЕ ПРОЕКТЫ -->
+  <section id="projects" class="section-full">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Избранные проекты</h2>
+        </div>
+        <a class="link-more" href="projects.html">Все проекты <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="slider">
+        <button class="slider-btn prev" type="button" aria-label="Предыдущий"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <div class="slider-viewport"><div class="slider-track" id="featured-track"></div></div>
+        <button class="slider-btn next" type="button" aria-label="Следующий"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="slider-dots" id="featured-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — ПРИМЕРЫ ПРОДАЮЩИХ САЙТОВ -->
+  <section id="demo-sites" class="section-full">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Примеры продающих сайтов</h2>
+        </div>
+        <a class="link-more" href="sites.html">Все примеры <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="slider">
+        <button class="slider-btn prev" type="button" aria-label="Предыдущий"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <div class="slider-viewport"><div class="slider-track" id="sites-track"></div></div>
+        <button class="slider-btn next" type="button" aria-label="Следующий"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="slider-dots" id="sites-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — КОМПЕТЕНЦИИ -->
+  <section class="about section-full" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <h2>Компетенции и технологии</h2>
+          <p>Разработка современных IT-продуктов под задачи бизнеса — от продающих сайтов до корпоративных систем и решений на базе искусственного интеллекта.</p>
+          <div class="about-points">
+            <div class="pt">
+              <span class="pt-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+              <div><b>Веб и мобильная разработка.</b> <span>Сайты, приложения, личные кабинеты и интерфейсы.</span></div>
+            </div>
+            <div class="pt">
+              <span class="pt-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+              <div><b>Автоматизация бизнес-процессов.</b> <span>CRM, учётные и управленческие системы.</span></div>
+            </div>
+            <div class="pt">
+              <span class="pt-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/></svg></span>
+              <div><b>AI-решения.</b> <span>Ассистенты и интеллектуальная обработка данных.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-stack reveal">
+          <div class="stack-row">
+            <span class="s-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <div class="s-meta"><b>Frontend</b><span>Сайты и веб-интерфейсы</span></div>
+            <div class="s-chips">
+              <span class="tech-chip"><span class="b" style="background:#e34f26"></span>HTML5</span>
+              <span class="tech-chip"><span class="b" style="background:#1572b6"></span>CSS3</span>
+              <span class="tech-chip"><span class="b" style="background:#f7df1e"></span>JavaScript</span>
+              <span class="tech-chip"><span class="b" style="background:#3178c6"></span>TypeScript</span>
+              <span class="tech-chip"><span class="b" style="background:#61dafb"></span>React</span>
+              <span class="tech-chip"><span class="b" style="background:#111827"></span>Next.js</span>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <span class="s-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+            <div class="s-meta"><b>Web &amp; No-Code Apps</b><span>Веб-приложения для телефонов и компьютеров</span></div>
+            <div class="s-chips">
+              <span class="tech-chip"><span class="b" style="background:#6d3cf5"></span>Glide</span>
+              <span class="tech-chip"><span class="b" style="background:#5a2fe0"></span>PWA</span>
+              <span class="tech-chip"><span class="b" style="background:#8a93a3"></span>Responsive Web</span>
+              <span class="tech-chip"><span class="b" style="background:#8a93a3"></span>Web Apps</span>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <span class="s-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><line x1="6" y1="6.5" x2="6.01" y2="6.5"/><line x1="6" y1="17.5" x2="6.01" y2="17.5"/></svg></span>
+            <div class="s-meta"><b>Backend</b><span>Серверная логика и API</span></div>
+            <div class="s-chips">
+              <span class="tech-chip"><span class="b" style="background:#539e43"></span>Node.js</span>
+              <span class="tech-chip"><span class="b" style="background:#8a93a3"></span>REST API</span>
+              <span class="tech-chip"><span class="b" style="background:#8a93a3"></span>Webhooks</span>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <span class="s-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>
+            <div class="s-meta"><b>Базы данных</b><span>Хранение и обработка данных</span></div>
+            <div class="s-chips">
+              <span class="tech-chip"><span class="b" style="background:#336791"></span>PostgreSQL</span>
+              <span class="tech-chip"><span class="b" style="background:#00758f"></span>MySQL</span>
+              <span class="tech-chip"><span class="b" style="background:#3ecf8e"></span>Supabase</span>
+              <span class="tech-chip"><span class="b" style="background:#ffca28"></span>Firebase</span>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <span class="s-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+            <div class="s-meta"><b>Интеграции</b><span>Связь систем и автоматизация</span></div>
+            <div class="s-chips">
+              <span class="tech-chip"><span class="b" style="background:#0f9d58"></span>Google Sheets</span>
+              <span class="tech-chip"><span class="b" style="background:#7248b9"></span>Google Forms</span>
+              <span class="tech-chip"><span class="b" style="background:#1da462"></span>Google Drive</span>
+              <span class="tech-chip"><span class="b" style="background:#4285f4"></span>Apps Script</span>
+              <span class="tech-chip"><span class="b" style="background:#2aabee"></span>Telegram API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — ТИПЫ РАЗРАБОТКИ -->
+  <section class="formats section-full" id="formats">
+    <div class="container">
+      <div class="formats-head reveal">
+        <h2>Типы разработки <span class="accent-text">и преимущества</span></h2>
+        <p>Подбираю формат разработки под задачи бизнеса: от быстрых no-code решений до гибких web-систем и удобных приложений.</p>
+      </div>
+
+      <div class="types-grid">
+        <!-- Левая высокая карточка -->
+        <article class="type-card tall reveal">
+          <div class="type-head">
+            <span class="type-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            <div><h3>No-Code разработка</h3><p>Быстрый запуск решений без сложной разработки</p></div>
+          </div>
+          <div class="type-img type-img-tall">Изображение</div>
+          <ul class="type-list">
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Быстрый старт проекта</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Ниже стоимость запуска</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Удобно для MVP и внутренних систем</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Легко тестировать идеи</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Подходит для форм, каталогов и учёта</li>
+          </ul>
+        </article>
+
+        <!-- Правая верхняя -->
+        <article class="type-card reveal">
+          <div class="type-head">
+            <span class="type-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <div><h3>Web-разработка</h3><p>Гибкие web-системы под задачи бизнеса</p></div>
+          </div>
+          <div class="type-body">
+            <div class="type-img">Изображение</div>
+            <ul class="type-list">
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Индивидуальная логика и дизайн</li>
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Масштабируемость</li>
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Интеграции с CRM, API и сервисами</li>
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Подходит для сложных процессов</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Правая нижняя -->
+        <article class="type-card reveal">
+          <div class="type-head">
+            <span class="type-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+            <div><h3>No-Code приложения</h3><p>Удобные приложения на базе Glide и таблиц</p></div>
+          </div>
+          <div class="type-body">
+            <div class="type-img">Изображение</div>
+            <ul class="type-list">
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Быстрое создание рабочих приложений</li>
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Удобно для сотрудников и клиентов</li>
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Можно подключать Google Sheets и Glide Tables</li>
+              <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Отлично для заявок, учёта и сервисных задач</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — КОНТАКТЫ + ПОДВАЛ (на всю высоту) -->
+  <div class="contact-footer">
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="reveal">
+          <h2>Есть идея? Давайте обсудим ваш проект.</h2>
+          <p>Расскажите коротко о задаче — предложу решение, сроки и формат работы.</p>
+        </div>
+        <form class="form reveal" id="contact-form" novalidate>
+          <div class="row">
+            <div class="field"><label for="f-name">Ваше имя</label><input class="input" id="f-name" name="name" type="text" placeholder="Как к вам обращаться"></div>
+            <div class="field"><label for="f-contact">Телефон / Email</label><input class="input" id="f-contact" name="contact" type="text" placeholder="Контакт для связи"></div>
+          </div>
+          <div class="field"><label for="f-message">Расскажите о проекте</label><textarea class="textarea" id="f-message" name="message" placeholder="Коротко о задаче..."></textarea></div>
+          <!-- honeypot -->
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+            <button class="btn btn-primary" type="submit">Отправить заявку</button>
+            <span class="form-ok" id="form-ok">Открываю WhatsApp — отправьте сообщение, и я свяжусь с вами.</span>
+          </div>
+          <div class="form-note">Нажимая кнопку, вы соглашаетесь на обработку контактных данных для ответа на обращение.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="muted">© <span id="year">2026</span> PORTFOLIO · Кирилл Колтаков</div>
+      <nav class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="sites.html">Сайты</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </footer>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
