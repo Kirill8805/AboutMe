@@ -8,12 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="assets/js/tw.config.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container nav">
+    <div class="container nav max-w-[1120px] mx-auto">
       <a class="brand" href="index.html"><span class="brand-mark">A</span> PORTFOLIO</a>
       <nav class="nav-links" id="nav-links">
         <a href="index.html">Главная</a>
@@ -25,20 +28,181 @@
     </div>
   </header>
 
-  <main id="project-detail"></main>
+  <main>
+    <!-- Шапка проекта -->
+    <section class="project-hero">
+      <div class="container max-w-[1120px] mx-auto">
+        <div class="project-head">
+          <div class="project-head-left">
+            <div class="crumbs"><a href="projects.html" class="font-bold">Проекты</a> / Все проекты</div>
+            <h1 id="p-title"></h1>
+          </div>
+          <div class="project-head-right">
+            <p class="project-tagline" id="p-tagline"></p>
+            <div class="project-badges">
+              <span class="chip" id="p-cat"></span>
+              <span class="chip chip-status" id="p-status"></span>
+            </div>
+          </div>
+        </div>
+        <div class="project-cover" id="p-cover"></div>
+      </div>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="muted">© <span id="year">2026</span> PORTFOLIO · Александр Шанкин</div>
-      <nav class="footer-links">
-        <a href="projects.html">Проекты</a>
-        <a href="sites.html">Сайты</a>
-        <a href="index.html#contact">Контакты</a>
+    <!-- Контент -->
+    <section class="project-content max-w-[1120px] mx-auto">
+      <div class="container">
+        <div class="project-grid">
+          <div class="prose">
+            <h3>О проекте</h3>
+            <p id="p-desc"></p>
+            <div class="project-cols  mt-6">
+              <div><h3>Какие задачи решает</h3><ul class="task-list" id="p-tasks"></ul></div>
+              <div><h3>Возможности и модули</h3><ul class="feature-list" id="p-features"></ul></div>
+            </div>
+          </div>
+          <aside>
+            <div class="side-card">
+              <div><h4>Статус</h4><div class="mt-2"><span class="chip chip-status" id="p-status2"></span></div></div>
+              <div><h4>Технологии</h4><div class="tech-mini mt-2.5" id="p-tech"></div></div>
+              <a class="btn-accent-full hidden" id="p-demo" target="_blank" rel="noopener">Открыть демо</a>
+              <a class="btn-primary-full" id="p-discuss">Обсудить похожий проект</a>
+            </div>
+          </aside>
+        </div>
+
+        <h3 class="gallery-title text-[20px] font-bold mt-6">Галерея интерфейсов</h3>
+        <div class="gallery gallery-wide" id="p-gallery"></div>
+      </div>
+    </section>
+
+    <!-- Другие проекты -->
+    <section class="next-projects">
+      <div class="container max-w-[1120px] mx-auto">
+        <div class="section-head">
+          <div><h2>Похожие проекты</h2></div>
+          <a class="link-more" href="projects.html">Все проекты <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="grid-2" id="p-others"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line py-10 bg-soft">
+    <div class="max-w-[1120px] mx-auto px-6 flex items-center justify-between gap-5 flex-wrap">
+      <div class="text-muted text-sm">© <span id="year">2026</span> PORTFOLIO · Кирилл Колтаков</div>
+      <nav class="flex gap-[18px] text-sm">
+        <a href="projects.html" class="hover:text-accent">Проекты</a>
+        <a href="sites.html" class="hover:text-accent">Сайты</a>
+        <a href="index.html#contact" class="hover:text-accent">Контакты</a>
       </nav>
     </div>
   </footer>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
+  <script>
+  /* Заполнение страницы проекта данными из data.js (по ?id=) */
+  (function () {
+    var ICON = {
+      check: '<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+      ext: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
+      img: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-4.5-4.5L5 21"/></svg>',
+      arrow: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>'
+    };
+    var D = window.PORTFOLIO_DATA || { projects: [] };
+    var id = new URLSearchParams(location.search).get("id");
+    var p = D.projects.filter(function (x) { return x.id === id; })[0] || D.projects[0];
+    if (!p) { document.querySelector("main").innerHTML = '<div class="container" style="padding:60px 24px">Проект не найден.</div>'; return; }
+
+    function el(i) { return document.getElementById(i); }
+    function text(i, t) { var e = el(i); if (e) e.textContent = t; }
+
+    document.title = p.title + " — Портфолио";
+    text("p-crumb", p.title);
+    text("p-title", p.title);
+    text("p-tagline", p.tagline);
+    text("p-cat", p.category);
+    text("p-desc", p.description);
+    ["p-status", "p-status2"].forEach(function (i) { var e = el(i); e.textContent = p.status; e.setAttribute("data-s", p.status); });
+
+    // Обложка
+    var cover = el("p-cover");
+    if (p.cover) { var im = document.createElement("img"); im.src = p.cover; im.alt = p.title; cover.appendChild(im); }
+    else { cover.innerHTML = '<div class="ph">Презентационная обложка</div>'; }
+
+    // Задачи
+    var tasks = el("p-tasks");
+    (p.tasks || []).forEach(function (t) { var li = document.createElement("li"); li.textContent = t; tasks.appendChild(li); });
+
+    // Возможности
+    var feats = el("p-features");
+    (p.features || []).forEach(function (f) {
+      var li = document.createElement("li");
+      li.innerHTML = ICON.check + "<span></span>";
+      li.querySelector("span").textContent = f;
+      feats.appendChild(li);
+    });
+
+    // Технологии
+    var tech = el("p-tech");
+    (p.technologies || []).forEach(function (t) { var s = document.createElement("span"); s.textContent = t; tech.appendChild(s); });
+
+    // Демо-кнопка
+    if (p.demoUrl) { var d = el("p-demo"); d.href = p.demoUrl; d.innerHTML = "Открыть демо " + ICON.ext; d.classList.remove("hidden"); }
+    el("p-discuss").href = "index.html?project=" + p.id + "#contact";
+
+    // Галерея
+    var gal = el("p-gallery");
+    if (p.gallery && p.gallery.length) {
+      p.gallery.forEach(function (src) {
+        var div = document.createElement("div");
+        div.className = "shot"; div.setAttribute("data-src", src);
+        var im = document.createElement("img"); im.src = src; im.loading = "lazy"; im.alt = "";
+        div.appendChild(im); gal.appendChild(div);
+      });
+    } else {
+      for (var i = 0; i < 2; i++) { var d2 = document.createElement("div"); d2.className = "shot ph-shot"; d2.innerHTML = ICON.img; gal.appendChild(d2); }
+    }
+
+    // Другие проекты
+    var others = D.projects.filter(function (x) { return x.id !== p.id; }).slice(0, 2);
+    var ow = el("p-others");
+    others.forEach(function (x) {
+      var cover = x.cover
+        ? '<img src="' + x.cover + '" alt="">'
+        : '<div class="ph">' + ICON.img + '<span>Обложка проекта</span></div>';
+      var bar = x.accent ? '<span class="card-accent bg-[' + x.accent + ']"></span>' : "";
+      var art = document.createElement("article");
+      art.className = "card card-click";
+      art.addEventListener("click", (function (pid) { return function () { location.href = "project.html?id=" + pid; }; })(x.id));
+      art.innerHTML =
+        '<div class="card-cover">' + bar + cover + '</div>' +
+        '<div class="card-body">' +
+          '<div class="card-badges"><span class="chip"></span><span class="chip chip-status" data-s="' + x.status + '"></span></div>' +
+          '<h3></h3><div class="tagline"></div><p class="desc"></p>' +
+          '<div class="card-foot"><a class="card-link" href="project.html?id=' + x.id + '">Подробнее ' + ICON.arrow + '</a></div>' +
+        '</div>';
+      art.querySelector(".card-badges .chip").textContent = x.category;
+      art.querySelector(".chip-status").textContent = x.status;
+      art.querySelector("h3").textContent = x.title;
+      art.querySelector(".tagline").textContent = x.tagline;
+      art.querySelector(".desc").textContent = x.description;
+      ow.appendChild(art);
+    });
+
+    // Лайтбокс для галереи
+    var lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.innerHTML = '<button class="lb-close" type="button" aria-label="Закрыть">&times;</button><img alt="">';
+    document.body.appendChild(lb);
+    var lbImg = lb.querySelector("img");
+    lb.addEventListener("click", function (e) { if (e.target === lb || e.target.closest(".lb-close")) lb.classList.remove("open"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.classList.remove("open"); });
+    gal.querySelectorAll(".shot[data-src]").forEach(function (s) {
+      s.addEventListener("click", function () { lbImg.src = s.getAttribute("data-src"); lb.classList.add("open"); });
+    });
+  })();
+  </script>
 </body>
 </html>

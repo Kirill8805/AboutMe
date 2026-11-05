@@ -317,7 +317,7 @@ section { padding: 72px 0; }
 .crumbs .crumb-sep { color: var(--line-strong); margin: 0 2px; }
 .project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; margin: 14px 0 4px; }
 .project-head h1 { font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.035em; font-weight: 800; line-height: 1.05; }
-.project-tagline { color: var(--ink-2); font-size: 18px; margin-top: 10px; max-width: 620px; }
+.project-tagline { color: var(--ink-2); font-size: 14px; text-align: end; margin-top: 10px; max-width: 620px; }
 .project-badges { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 8px; }
 
 .project-cover {
@@ -505,4 +505,22 @@ section { padding: 72px 0; }
   .slider-btn.next { right: 6px; }
   .slider-btn { background: rgba(255,255,255,.92); }
   .scroll-nav { right: 16px; bottom: 16px; }
+}
+
+/* Контейнер обложки */
+.card-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Цветная полоска сверху */
+.card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 5;
+  display: block;
+  border-radius: 14px 14px 0 0;
 }

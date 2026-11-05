@@ -20,8 +20,9 @@
 
   /* ---------- Обложка (картинка или плейсхолдер) ---------- */
   function coverHTML(src, accent, kind) {
-    var bar = accent ? '<span class="card-accent" style="background:' + esc(accent) + '"></span>' : "";
-    if (src) return bar + '<img src="' + esc(src) + '" alt="" loading="lazy">';
+var bar = accent
+  ? '<span class="card-accent" style="background-color:' + esc(accent) + '"></span>'
+  : "";    if (src) return bar + '<img src="' + esc(src) + '" alt="" loading="lazy">';
     var icon = kind === "site" ? ICON.screen : ICON.img;
     var label = kind === "site" ? "Превью сайта" : "Обложка проекта";
     return bar + '<div class="ph">' + icon + '<span>' + label + "</span></div>";
@@ -48,8 +49,8 @@
   /* ---------- Карточка демо-сайта ---------- */
   function siteCard(s) {
     var demo = s.demoUrl
-      ? '<a class="btn btn-accent btn-sm" href="' + esc(s.demoUrl) + '" target="_blank" rel="noopener">Открыть демо ' + ICON.ext + '</a>'
-      : '<a class="btn btn-accent btn-sm" href="#" onclick="return false" title="Ссылка на демо будет добавлена">Открыть демо ' + ICON.ext + '</a>';
+      ? '<a class="btn-accent" href="' + esc(s.demoUrl) + '" target="_blank" rel="noopener">Открыть демо ' + ICON.ext + '</a>'
+      : '<a class="btn-accent" href="#" onclick="return false" title="Ссылка на демо будет добавлена">Открыть демо ' + ICON.ext + '</a>';
     return '' +
       '<article class="card site-card reveal" data-category="' + esc(s.category) + '">' +
         '<div class="card-cover">' + coverHTML(s.preview, s.accent, "site") + '</div>' +
@@ -112,7 +113,7 @@
     function buildDots() {
       if (!dotsWrap) return;
       var h = "";
-      for (var i = 0; i < n; i++) h += '<button type="button" data-i="' + i + '" aria-label="Слайд ' + (i + 1) + '"></button>';
+      for (var i = 0; i < n; i++) h += '<button type="button" class="slider-dot" data-i="' + i + '" aria-label="Слайд ' + (i + 1) + '"></button>';
       dotsWrap.innerHTML = h;
     }
     function updateDots() {
@@ -260,10 +261,13 @@
       '<section class="project-hero"><div class="container">' +
         '<div class="crumbs"><a href="projects.html" class="crumb-back">' + back + ' Проекты</a> <span class="crumb-sep">/</span> ' + esc(p.title) + '</div>' +
         '<div class="project-head">' +
-          '<div><h1>' + esc(p.title) + '</h1><p class="project-tagline">' + esc(p.tagline) + '</p></div>' +
-          '<div class="project-badges">' +
-            '<span class="chip">' + esc(p.category) + '</span>' +
-            '<span class="chip chip-status" data-s="' + esc(p.status) + '">' + esc(p.status) + '</span>' +
+          '<h1>' + esc(p.title) + '</h1>' +
+          '<div class="project-head-right">' +
+            '<div class="project-badges">' +
+              '<span class="chip">' + esc(p.category) + '</span>' +
+              '<span class="chip chip-status" data-s="' + esc(p.status) + '">' + esc(p.status) + '</span>' +
+            '</div>' +
+            '<p class="project-tagline">' + esc(p.tagline) + '</p>' +
           '</div>' +
         '</div>' +
         '<div class="project-cover">' + (p.cover ? '<img src="' + esc(p.cover) + '" alt="">' : '<div class="ph">Презентационная обложка</div>') + '</div>' +
@@ -277,18 +281,18 @@
               '<div><h3>Какие задачи решает</h3><ul class="task-list">' + (p.tasks || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + '</ul></div>' +
               '<div><h3>Возможности и модули</h3><ul class="feature-list">' + (p.features || []).map(function (f) { return "<li>" + ICON.check + "<span>" + esc(f) + "</span></li>"; }).join("") + '</ul></div>' +
             '</div>' +
-            '<h3>Галерея интерфейсов</h3>' +
-            '<div class="gallery">' + gallery + '</div>' +
           '</div>' +
           '<aside>' +
             '<div class="side-card">' +
-              '<div><h4>Статус</h4><div style="margin-top:8px"><span class="chip chip-status" data-s="' + esc(p.status) + '">' + esc(p.status) + '</span></div></div>' +
-              '<div><h4>Технологии</h4><div class="tech-mini" style="margin-top:10px">' + (p.technologies || []).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div></div>' +
-              (p.demoUrl ? '<a class="btn btn-accent btn-full" href="' + esc(p.demoUrl) + '" target="_blank" rel="noopener">Открыть демо ' + ICON.ext + '</a>' : '') +
-              '<a class="btn btn-primary btn-full" href="index.html?project=' + esc(p.id) + '#contact">Обсудить похожий проект</a>' +
+              '<div><h4>Статус</h4><div class="mt-2"><span class="chip chip-status" data-s="' + esc(p.status) + '">' + esc(p.status) + '</span></div></div>' +
+              '<div><h4>Технологии</h4><div class="tech-mini mt-2.5">' + (p.technologies || []).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div></div>' +
+              (p.demoUrl ? '<a class="btn-accent-full" href="' + esc(p.demoUrl) + '" target="_blank" rel="noopener">Открыть демо ' + ICON.ext + '</a>' : '') +
+              '<a class="btn-primary-full" href="index.html?project=' + esc(p.id) + '#contact">Обсудить похожий проект</a>' +
             '</div>' +
           '</aside>' +
         '</div>' +
+        '<h3 class="gallery-title">Галерея интерфейсов</h3>' +
+        '<div class="gallery gallery-wide">' + gallery + '</div>' +
       '</div></section>' +
 
       '<section class="next-projects"><div class="container">' +
@@ -368,9 +372,9 @@
         + (message && message.value.trim() ? "\nО проекте: " + message.value.trim() : "");
       window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text), "_blank");
 
-      if (ok) { ok.classList.add("show"); }
+      if (ok) { ok.classList.remove("hidden"); }
       form.reset();
-      setTimeout(function () { if (ok) ok.classList.remove("show"); }, 6000);
+      setTimeout(function () { if (ok) ok.classList.add("hidden"); }, 6000);
     });
   }
 
@@ -390,7 +394,7 @@
   /* ---------- Мобильное меню ---------- */
   function initNav() {
     var t = el("nav-toggle"), links = el("nav-links");
-    if (t && links) t.addEventListener("click", function () { links.classList.toggle("open"); });
+    if (t && links) t.addEventListener("click", function () { links.classList.toggle("max-md:hidden"); });
   }
 
   /* ---------- Год в футере ---------- */
