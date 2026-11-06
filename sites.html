@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html"><span class="brand-mark">A</span> PORTFOLIO</a>
+      <a class="brand" href="index.html"><span class="brand-mark">K</span> PORTFOLIO</a>
       <nav class="nav-links" id="nav-links">
         <a href="index.html">Главная</a>
         <a href="projects.html">Проекты</a>
@@ -27,7 +28,7 @@
 
   <section class="page-head">
     <div class="container">
-      <div class="crumbs"><a href="index.html">Каталог</a> / Продающие сайты</div>
+      <!-- <div class="crumbs"><a href="index.html">Каталог</a> / Продающие сайты</div> -->
       <h1>Примеры сайтов для бизнеса</h1>
       <p>Посмотрите готовые демонстрации и выберите подходящий формат.</p>
     </div>
@@ -40,47 +41,50 @@
     </div>
   </section>
 
-  <!-- КОНТАКТЫ -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-label reveal">Связь</div>
-      <div class="contact-wrap">
-        <div class="reveal">
-          <h2>Есть идея? Давайте обсудим ваш проект.</h2>
-          <p>Расскажите коротко о задаче — предложу решение, сроки и формат работы.</p>
-          <div class="contact-direct">
-            <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn btn-tg" data-tg href="#" target="_blank" rel="noopener">Telegram</a>
-            <a class="btn btn-ghost" data-email href="#">Email</a>
+<!-- КОНТАКТЫ -->
+  <div class="contact-footer">
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="reveal">
+            <h2>Есть идея? Давайте обсудим ваш проект.</h2>
+            <p>Расскажите коротко о задаче — предложу решение, сроки и формат работы.</p>
+            <div class="contact-direct">
+              <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+              <!-- <a class="btn btn-tg" data-tg href="#" target="_blank" rel="noopener">Telegram</a> -->
+              <a class="btn btn-ghost" data-email href="#">Email</a>
+            </div>
           </div>
+          <form class="form reveal" id="contact-form" novalidate>
+            <div class="row">
+              <div class="field"><label for="f-name">Ваше имя</label><input class="input" id="f-name" name="name" type="text" placeholder="Как к вам обращаться"></div>
+              <div class="field"><label for="f-contact">Телефон / Email</label><input class="input" id="f-contact" name="contact" type="text" placeholder="Контакт для связи"></div>
+            </div>
+            <div class="field"><label for="f-message">Расскажите о проекте</label><textarea class="textarea" id="f-message" name="message" placeholder="Коротко о задаче..."></textarea></div>
+            <!-- honeypot -->
+            <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+            <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+              <button class="btn btn-primary" type="submit">Отправить заявку</button>
+              <span class="form-ok" id="form-ok">Открываю WhatsApp — отправьте сообщение, и я свяжусь с вами.</span>
+            </div>
+            <div class="form-note">Нажимая кнопку, вы соглашаетесь на обработку контактных данных для ответа на обращение.</div>
+          </form>
         </div>
-        <form class="form reveal" id="contact-form" novalidate>
-          <div class="row">
-            <div class="field"><label for="f-name">Ваше имя</label><input class="input" id="f-name" name="name" type="text" placeholder="Как к вам обращаться"></div>
-            <div class="field"><label for="f-contact">Телефон / Email</label><input class="input" id="f-contact" name="contact" type="text" placeholder="Контакт для связи"></div>
-          </div>
-          <div class="field"><label for="f-message">Расскажите о проекте</label><textarea class="textarea" id="f-message" name="message" placeholder="Коротко о задаче..."></textarea></div>
-          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-            <button class="btn btn-primary" type="submit">Отправить заявку</button>
-            <span class="form-ok" id="form-ok">Спасибо! Заявка отправлена, свяжусь с вами в ближайшее время.</span>
-          </div>
-          <div class="form-note">Нажимая кнопку, вы соглашаетесь на обработку контактных данных для ответа на обращение.</div>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="muted">© <span id="year">2026</span> PORTFOLIO · Кирилл Колтаков</div>
-      <nav class="footer-links">
-        <a href="projects.html">Проекты</a>
-        <a href="sites.html">Сайты</a>
-        <a href="index.html#contact">Контакты</a>
-      </nav>
-    </div>
-  </footer>
+    <!-- ФУТЕР -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="muted">© <span id="year">2026</span> PORTFOLIO · Кирилл Колтаков</div>
+        <nav class="footer-links">
+          <a href="projects.html">Проекты</a>
+          <a href="sites.html">Сайты</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
