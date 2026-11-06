@@ -82,7 +82,8 @@ body { background: radial-gradient(1200px 520px at 78% -8%, #efe9ff 0, rgba(239,
 .slider-dot.active { width: 26px; background: #6d3cf5; }
 @media (max-width: 680px) { .slider-track > .card { flex-basis: 100%; } }
 @media (max-width: 680px) {
-  .slider-btn { background: rgba(255,255,255,.92); }
+  .slider-btn { display: none; }
+  .slider-track { touch-action: pan-y; }
 }
 
 /* ---- Карточки проектов / сайтов ---- */
@@ -140,9 +141,9 @@ body { background: radial-gradient(1200px 520px at 78% -8%, #efe9ff 0, rgba(239,
 
 /* ---- Фильтры ---- */
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
-.filter-btn { padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fff; border: 1px solid #d9d5ec; color: #3d4552; transition: all .15s ease; cursor: pointer; }
-.filter-btn:hover { border-color: #3d4552; color: #0d1117; }
-.filter-btn.is-active { background: #0d1117; color: #fff; border-color: #0d1117; }
+.filter-btn { padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fff; border: 1px solid #6d3cf5; color: #6d3cf5; transition: all .15s ease; cursor: pointer; }
+.filter-btn:hover { border-color: #5a2fe0; color: #5a2fe0; }
+.filter-btn.is-active { background: #6d3cf5; color: #fff; border-color: #6d3cf5; }
 
 /* ---- Детальная страница ---- */
 .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }

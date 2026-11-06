@@ -20,9 +20,8 @@
 
   /* ---------- Обложка (картинка или плейсхолдер) ---------- */
   function coverHTML(src, accent, kind) {
-var bar = accent
-  ? '<span class="card-accent" style="background-color:' + esc(accent) + '"></span>'
-  : "";    if (src) return bar + '<img src="' + esc(src) + '" alt="" loading="lazy">';
+    var bar = accent ? '<span class="card-accent bg-[' + esc(accent) + ']"></span>' : "";
+    if (src) return bar + '<img src="' + esc(src) + '" alt="" loading="lazy">';
     var icon = kind === "site" ? ICON.screen : ICON.img;
     var label = kind === "site" ? "Превью сайта" : "Обложка проекта";
     return bar + '<div class="ph">' + icon + '<span>' + label + "</span></div>";
@@ -156,6 +155,24 @@ var bar = accent
     });
     viewport.addEventListener("mouseenter", stop);
     viewport.addEventListener("mouseleave", start);
+
+    // Листание пальцем (свайп) на телефоне
+    var tsX = null, tsY = null, swiping = false;
+    viewport.addEventListener("touchstart", function (e) {
+      var t = e.touches[0]; tsX = t.clientX; tsY = t.clientY; swiping = false; stop();
+    }, { passive: true });
+    viewport.addEventListener("touchmove", function (e) {
+      if (tsX === null) return;
+      var t = e.touches[0];
+      if (!swiping && Math.abs(t.clientX - tsX) > Math.abs(t.clientY - tsY) && Math.abs(t.clientX - tsX) > 10) swiping = true;
+    }, { passive: true });
+    viewport.addEventListener("touchend", function (e) {
+      if (tsX === null) return;
+      var t = e.changedTouches[0], dx = t.clientX - tsX, dy = t.clientY - tsY;
+      tsX = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { if (dx < 0) next(); else prev(); }
+      start();
+    }, { passive: true });
     var rt;
     window.addEventListener("resize", function () {
       clearTimeout(rt);
@@ -394,7 +411,7 @@ var bar = accent
   /* ---------- Мобильное меню ---------- */
   function initNav() {
     var t = el("nav-toggle"), links = el("nav-links");
-    if (t && links) t.addEventListener("click", function () { links.classList.toggle("max-md:hidden"); });
+    if (t && links) t.addEventListener("click", function () { links.classList.toggle("open"); links.classList.toggle("max-md:hidden"); });
   }
 
   /* ---------- Год в футере ---------- */
