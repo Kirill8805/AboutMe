@@ -20,7 +20,7 @@
 
   /* ---------- Обложка (картинка или плейсхолдер) ---------- */
   function coverHTML(src, accent, kind) {
-    var bar = accent ? '<span class="card-accent bg-[' + esc(accent) + ']"></span>' : "";
+    var bar = accent ? '<span class="card-accent" style="background:' + esc(accent) + '"></span>' : "";
     if (src) return bar + '<img src="' + esc(src) + '" alt="" loading="lazy">';
     var icon = kind === "site" ? ICON.screen : ICON.img;
     var label = kind === "site" ? "Превью сайта" : "Обложка проекта";
